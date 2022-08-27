@@ -23,7 +23,6 @@ const CounterApp = ({ value }) => {
     <>
         <h1>CounterApp</h1>
         <h2>{counter}</h2>
-        {/* //Comentario prueba */}
 
         <button onClick={handleIncrement}>+1</button>
         <button onClick={handleReset}>Reset</button>
