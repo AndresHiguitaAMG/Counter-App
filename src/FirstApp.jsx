@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const FirstApp = ({ titulo, subtitulo }) => {
     
@@ -10,12 +10,12 @@ const FirstApp = ({ titulo, subtitulo }) => {
     );
 }
 
-// FirstApp.propTypes = {
-//     titulo: PropTypes.string.isRequired
-// }
+FirstApp.propTypes = {
+    titulo: PropTypes.string.isRequired
+}
 
-// FirstApp.defaultProps = {
-//     subtitulo: "Soy un subtitulo"
-// }
+FirstApp.defaultProps = {
+    subtitulo: "Soy un subtitulo"
+}
 
 export default FirstApp;
