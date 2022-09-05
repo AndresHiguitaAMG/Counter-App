@@ -11,5 +11,5 @@ describe('Pruebas en 07-deses-arr', () => {
         expect(typeof numbers).toBe('number');
 
         expect(letters).toEqual(expect.any(String));
-    })
-})
+    });
+});

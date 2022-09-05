@@ -18,5 +18,5 @@ const usContext = ({ clave, nombre, edad, rango = 'Capitán' }) => {
         }
     }
 
-}
+};
 
