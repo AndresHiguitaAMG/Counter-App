@@ -1,12 +1,12 @@
-// describe('Pruebas en el archivo demo.test.js', () => {
-    test('deben ser iguales los string', () => {
-//         //1. Inicialización
-//         const mensaje = "Hola Mundo";
+describe('Pruebas en el archivo demo.test.js', () => {
+    test('Esta prueba no debe fallar', () => {
+         //1. Inicialización
+        const message1 = "Hola Mundo";
         
-//         //2. Estimulo
-//         const mensaje2 = `Hola Mundo`;
+        //2. Estimulo
+        const message2 = message1.trim();
         
-//         //3. Observar el comprotamiento
-//         expect(mensaje).toBe(mensaje2); //===
-    })
-// });
+      //3. Observar el comprotamiento
+     expect(message1).toBe(message2); //===
+    });
+});
