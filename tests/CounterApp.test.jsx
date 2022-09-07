@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import CounterApp from "../src/CounterApp";
 
 describe('Pruebas en el <CounterApp />', () => {
@@ -15,6 +15,34 @@ describe('Pruebas en el <CounterApp />', () => {
         expect(screen.getByText(100)).toBeTruthy();
         
         //Mi solución a este test, solo me falto en el toContain convertirlo a string para poder pasar el test, estuve cerca de la solución
-        // expect(screen.getByRole('heading', {level: 2}).innerHTML).toContain("100");
+        // expect(screen.getByRole('heading', {level: 2}).innerHTML).toContain('100');
+    });
+
+    test('debe de incrementar con el botón +1', () => {
+        render(<CounterApp value={value} />);
+        fireEvent.click(screen.getByText('+1'));
+
+        expect(screen.getByText('11')).toBeTruthy();
+    });
+
+    test('debe de decrementar con el botón -1', () => {
+        render(<CounterApp value={value} />);
+        fireEvent.click(screen.getByText('-1'));
+
+        expect(screen.getByText('9')).toBeTruthy();
+    });
+
+    test('debe de funcionar el botón de reset', () => {
+        render(<CounterApp value={value} />);
+        fireEvent.click(screen.getByText('-1'));
+        fireEvent.click(screen.getByText('-1'));
+        fireEvent.click(screen.getByText('-1'));
+        // fireEvent.click(screen.getByText('Reset'));
+
+        // expect(screen.getByText('10')).toBeTruthy();
+        
+        fireEvent.click(screen.getByRole('button', {name: "btn-reset"}));
+
+        expect(10).toBeTruthy();
     });
 })
